@@ -18,4 +18,5 @@ RUN dotnet publish "app-docker-api.csproj" -c Release -o /app/publish /p:UseAppH
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "app-docker-api.dll"]
+CMD ["dotnet", "app-docker-api.dll"]
+# ENTRYPOINT ["dotnet", "app-docker-api.dll"]
